@@ -96,3 +96,68 @@ function findTopListings(listings, neighborhood, maxPrice) {
 console.log('✅ Pipeline data loaded successfully!');
 console.log(`📊 Total listings: ${listings.length}`);
 console.log('='.repeat(60));
+
+console.log('\n========== TASK 2: Data Processing Pipeline ==========\n');
+
+// Test 1: Westlands under 5000
+console.log('--- Test 1: Top listings in Westlands under KES 5,000 ---');
+const westlandsResults = findTopListings(listings, "Westlands", 5000);
+console.log(`\nTop listings in Westlands under KES 5,000:`);
+westlandsResults.forEach((result, index) => {
+    console.log(`${index + 1}. ${result}`);
+});
+
+console.log('\n' + '-'.repeat(60) + '\n');
+
+// Test 2: Kilimani under 10000
+console.log('--- Test 2: Top listings in Kilimani under KES 10,000 ---');
+const kilimaniResults = findTopListings(listings, "Kilimani", 10000);
+console.log(`\nTop listings in Kilimani under KES 10,000:`);
+kilimaniResults.forEach((result, index) => {
+    console.log(`${index + 1}. ${result}`);
+});
+
+console.log('\n' + '-'.repeat(60) + '\n');
+
+
+// ADDITIONAL TESTS FOR DEMONSTRATION
+
+console.log('--- Additional Tests ---\n');
+
+// Test 3: Karen under 10000
+console.log('Test 3: Karen under KES 10,000');
+const karenResults = findTopListings(listings, "Karen", 10000);
+if (karenResults.length === 0) {
+    console.log('No listings found in Karen under KES 10,000');
+} else {
+    karenResults.forEach((result, index) => {
+        console.log(`${index + 1}. ${result}`);
+    });
+}
+
+console.log('\n' + '-'.repeat(60) + '\n');
+
+// Test 4: Eastleigh under 2000
+console.log('Test 4: Eastleigh under KES 2,000');
+const eastleighResults = findTopListings(listings, "Eastleigh", 2000);
+if (eastleighResults.length === 0) {
+    console.log('No listings found in Eastleigh under KES 2,000');
+} else {
+    eastleighResults.forEach((result, index) => {
+        console.log(`${index + 1}. ${result}`);
+    });
+}
+
+console.log('\n' + '-'.repeat(60) + '\n');
+
+// Test 5: Westlands under 10000 (more results)
+console.log('Test 5: Westlands under KES 10,000');
+const westlandsAll = findTopListings(listings, "Westlands", 10000);
+console.log(`Found ${westlandsAll.length} listings in Westlands under KES 10,000`);
+westlandsAll.forEach((result, index) => {
+    console.log(`${index + 1}. ${result}`);
+});
+
+console.log('\n' + '='.repeat(60));
+console.log('✅ Data processing complete!');
+console.log('='.repeat(60));
