@@ -82,3 +82,51 @@ console.log('5. Add to beginning and end:', {
 console.log('\n' + '='.repeat(60));
 console.log('✅ Destructuring and Spread exercises complete!');
 console.log('='.repeat(60));
+
+
+
+console.log('\n--- REST ---\n');
+
+// Exercise 1: Sum any number of arguments
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+console.log('1. Sum function:', {
+    'sum(1,2,3,4)': sum(1, 2, 3, 4),
+    'sum(10,20,30)': sum(10, 20, 30),
+    'sum(5)': sum(5)
+});
+
+// Exercise 2: First parameter and rest
+function greet(first, ...others) {
+    return `First: ${first}, Others: ${others.join(', ')}`;
+}
+console.log('2. Greet function:', greet('Alice', 'Bob', 'Charlie', 'Diana'));
+
+// Exercise 3: Destructure with rest
+const person5 = { 
+    name: "John", 
+    age: 30, 
+    city: "Nairobi", 
+    country: "Kenya", 
+    profession: "Engineer" 
+};
+const { name: personName, ...details } = person5;
+console.log('3. Destructure with rest:', { 
+    name: personName, 
+    details: details 
+});
+
+// Exercise 4: Head and rest
+function head(first, ...rest) {
+    return { first, rest };
+}
+console.log('4. Head and rest:', head('a', 'b', 'c', 'd', 'e'));
+
+// Exercise 5: First and count remaining
+function logFirstAndCount(first, ...rest) {
+    return `First: ${first}, remaining: ${rest.length}`;
+}
+console.log('5. First and count:', logFirstAndCount('x', 'y', 'z', 'w', 'v'));
+
+console.log('\n' + '='.repeat(60) + '\n');
